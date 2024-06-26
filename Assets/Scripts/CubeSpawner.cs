@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CubeSpawner : MonoBehaviour
 {    
@@ -6,6 +8,8 @@ public class CubeSpawner : MonoBehaviour
 
     private int _minNumberOfCubes = 2;
     private int _maxNumberOfCubes = 6;    
+
+    public event UnityAction <List<Cube>> Spawned;
 
     private void OnEnable()
     {
@@ -19,13 +23,18 @@ public class CubeSpawner : MonoBehaviour
 
     private void Spawn(int splitChancePercentage)
     {        
-        int numberOfCubes = Random.Range(_minNumberOfCubes, _maxNumberOfCubes + 1);      
+        int numberOfCubes = Random.Range(_minNumberOfCubes, _maxNumberOfCubes + 1);
+        List<Cube> newCubes = new();
 
         for (int i = 0; i < numberOfCubes; i++)
         {
             Cube newCube = Instantiate(_cube, transform.position, Quaternion.identity);            
 
-            newCube.ChangeStats(splitChancePercentage);    
-        }        
+            newCube.ChangeStats(splitChancePercentage); 
+            
+            newCubes.Add(newCube);
+        }
+        
+        Spawned?.Invoke(newCubes);
     }
 }
