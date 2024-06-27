@@ -31,7 +31,6 @@ public class Exploder : MonoBehaviour
         float explosionForce = _explosionForce * explodeMultiplier;
         float explosionRadius = _explosionRadius * explodeMultiplier;
 
-
         foreach (Rigidbody explodableObject in GetExpodableObjects(explosionRadius))        
             explodableObject.AddExplosionForce(explosionForce, transform.position, explosionRadius);        
     }
