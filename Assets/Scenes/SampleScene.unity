@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 726008284}
   - component: {fileID: 726008283}
   - component: {fileID: 726008282}
+  - component: {fileID: 726008289}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -357,8 +358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90eaa69b8d720b4a9f77000735171e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionForce: 500
-  _explosionRadius: 100
 --- !u!114 &726008283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,12 +478,27 @@ Transform:
   m_GameObject: {fileID: 726008281}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.81, y: 2, z: -9.01}
+  m_LocalPosition: {x: 7, y: 2, z: -7}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &726008289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726008281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa31f9fe89024942907f6ff3462f8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cubeSpawner: {fileID: 726008283}
+  _explosionForce: 500
+  _explosionRadius: 10
 --- !u!1 &769084643
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +567,7 @@ GameObject:
   - component: {fileID: 793842220}
   - component: {fileID: 793842221}
   - component: {fileID: 793842222}
+  - component: {fileID: 793842223}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -640,9 +655,9 @@ Transform:
   m_GameObject: {fileID: 793842215}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.64, y: 2, z: 3}
+  m_LocalPosition: {x: 0, y: 2, z: 5.5}
   m_LocalScale: {x: 4, y: 4, z: 4}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -698,8 +713,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90eaa69b8d720b4a9f77000735171e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &793842223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793842215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa31f9fe89024942907f6ff3462f8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cubeSpawner: {fileID: 793842221}
   _explosionForce: 500
-  _explosionRadius: 100
+  _explosionRadius: 10
 --- !u!1 &947214030
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +998,7 @@ GameObject:
   - component: {fileID: 1067119319}
   - component: {fileID: 1067119318}
   - component: {fileID: 1067119317}
+  - component: {fileID: 1067119324}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -989,8 +1018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90eaa69b8d720b4a9f77000735171e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionForce: 500
-  _explosionRadius: 100
 --- !u!114 &1067119318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,12 +1138,27 @@ Transform:
   m_GameObject: {fileID: 1067119316}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.29, y: 2, z: -4.5}
+  m_LocalPosition: {x: -9, y: 2, z: -4}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1067119324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067119316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa31f9fe89024942907f6ff3462f8ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cubeSpawner: {fileID: 1067119318}
+  _explosionForce: 500
+  _explosionRadius: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

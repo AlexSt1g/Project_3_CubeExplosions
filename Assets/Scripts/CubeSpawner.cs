@@ -21,7 +21,7 @@ public class CubeSpawner : MonoBehaviour
         _cube.Split -= Spawn;
     }
 
-    private void Spawn(int splitChancePercentage)
+    private void Spawn(int splitChancePercentage, int explodeMultiplier)
     {        
         int numberOfCubes = Random.Range(_minNumberOfCubes, _maxNumberOfCubes + 1);
         List<Cube> newCubes = new();
@@ -30,7 +30,7 @@ public class CubeSpawner : MonoBehaviour
         {
             Cube newCube = Instantiate(_cube, transform.position, Quaternion.identity);            
 
-            newCube.ChangeStats(splitChancePercentage); 
+            newCube.ChangeStats(splitChancePercentage, explodeMultiplier);
             
             newCubes.Add(newCube);
         }
